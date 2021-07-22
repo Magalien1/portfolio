@@ -4,24 +4,24 @@
 
 {% block body %}
 <h1 class="text-center"> Projets réalisés </h1>
-    <div class="row ">
         <div class="col-md-10 d-flex mx-auto">
             <a href="" class="btn-success rounded-pill m-auto">Tout</a>
             <a href="" class="btn-success rounded-pill m-auto">Graphisme print</a>
             <a href="" class="btn-success rounded-pill m-auto">Graphisme web</a>
             <a href="" class="btn-success rounded-pill m-auto">Développement web</a>
         </div>
-    </div>
+
     <div class="row ">
+
             <div class=" col-10 p-5 h-25 d-md-flex justify-content-around mx-auto">
                 {% for project in projects %}
-                <div class=" col-sm-3 card m-3">
-                    <img src="{{ project.picture }}" alt="">
-                    <h4> {{ project.Title }}</h4>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#card-{{ project.id }}">
-                        découvrir
-                    </button>
-                </div>
+                    <div class=" col-sm-3 card m-3">
+                        <img class="m-2" src="{{ project.picture }}" alt="">
+                        <h4> {{ project.Title }}</h4>
+                        <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#card-{{ project.id }}">
+                            découvrir
+                        </button>
+                    </div>
                     <!-- Modal -->
                     <div class="modal fade" id="card-{{ project.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -45,4 +45,8 @@
                         </div>
                     </div>
                 {% endfor %}
+            </div>
+    </div>
+
+
 {% endblock %}
