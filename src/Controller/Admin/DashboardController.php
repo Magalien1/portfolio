@@ -2,6 +2,10 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Article;
+use App\Entity\CategoryArticle;
+use App\Entity\CategoryProject;
+use App\Entity\Project;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -27,6 +31,9 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
-        // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
+        yield MenuItem::linkToCrud('Les projets', 'fas fa-list', Project::class);
+        yield MenuItem::linkToCrud('Les articles', 'fas fa-newspaper', Article::class);
+        yield MenuItem::linkToCrud('Catégories projets', 'fas fa-tag', CategoryProject::class);
+        yield MenuItem::linkToCrud('Catégories articles', 'fas fa-hashtag', CategoryArticle::class);
     }
 }
