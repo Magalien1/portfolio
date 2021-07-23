@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="m-5"> inscription</h1>
+    <div class="w-100">
+        <div class="ml-auto mr-auto">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button type="submit" class="btn btn-primary rounded-pill"> inscription</button>
+            {{ form_end (form) }}
+        </div>
+    </div>
+
+
+{% endblock %}
